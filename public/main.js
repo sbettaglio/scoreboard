@@ -32,6 +32,8 @@ const checkForWinner = () => {
     document.querySelector('.team-2-add-1-button').disabled = true
     document.querySelector('.team-2-subtract-1-button').disabled = true
     document.querySelector('.team-1-name').textContent += ' is the winner!'
+    document.querySelector('.one').style.background = 'red'
+    document.querySelector('.team-1-score').style.color = 'blue'
   } else if (document.querySelector('.team-2-score').textContent === '21') {
     document.querySelector('.update-team-1-name').disabled = true
     document.querySelector('.update-team-2-name').disabled = true
@@ -40,6 +42,8 @@ const checkForWinner = () => {
     document.querySelector('.team-2-add-1-button').disabled = true
     document.querySelector('.team-2-subtract-1-button').disabled = true
     document.querySelector('.team-2-name').textContent += ' is the winner!'
+    document.querySelector('.two').style.background = 'red'
+    document.querySelector('.team-2-score').style.color = 'blue'
   }
 }
 const addTeamOne = () => {
@@ -75,6 +79,10 @@ const reset = () => {
   document.querySelector('.team-2-score').textContent = '0'
   document.querySelector('.team-1-name').textContent = 'Input Name'
   document.querySelector('.team-2-name').textContent = 'Input Name'
+  document.querySelector('.two').style.background = 'whitesmoke'
+  document.querySelector('.team-2-score').style.color = 'black'
+  document.querySelector('.one').style.background = 'whitesmoke'
+  document.querySelector('.team-1-score').style.color = 'black'
 }
 
 document.addEventListener('DOMContentLoaded', main)
