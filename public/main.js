@@ -64,6 +64,18 @@ const subtractTeamOne = () => {
 const subtractTeamTwo = () => {
   subtractTeam('.team-2-score')
 }
+const reset = () => {
+  document.querySelector('.update-team-1-name').disabled = false
+  document.querySelector('.update-team-2-name').disabled = false
+  document.querySelector('.team-1-add-1-button').disabled = false
+  document.querySelector('.team-1-subtract-1-button').disabled = false
+  document.querySelector('.team-2-add-1-button').disabled = false
+  document.querySelector('.team-2-subtract-1-button').disabled = false
+  document.querySelector('.team-1-score').textContent = '0'
+  document.querySelector('.team-2-score').textContent = '0'
+  document.querySelector('.team-1-name').textContent = 'Input Name'
+  document.querySelector('.team-2-name').textContent = 'Input Name'
+}
 
 document.addEventListener('DOMContentLoaded', main)
 document.querySelector('.update-team-1-name').addEventListener('click', teamOne)
@@ -80,3 +92,4 @@ document
 document
   .querySelector('.team-2-subtract-1-button')
   .addEventListener('click', subtractTeamTwo)
+document.querySelector('.reset').addEventListener('click', reset)
