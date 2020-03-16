@@ -14,15 +14,34 @@ const teamTwo = () => {
   updateTeamName('.team-2-input', '.team-2-name')
 }
 
-const addScore = score => {
-  if (document.querySelector(score).textContent < 21) {
+const addScore = (score, name) => {
+  if (parseInt(document.querySelector(score).textContent) < '21') {
     const total = document.querySelector(score).textContent
-    console.log(total)
     const newTotal = parseInt(total) + 1
     document.querySelector(score).textContent = newTotal
+    checkForWinner()
   }
 }
 
+const checkForWinner = () => {
+  if (document.querySelector('.team-1-score').textContent === '21') {
+    document.querySelector('.update-team-1-name').disabled = true
+    document.querySelector('.update-team-2-name').disabled = true
+    document.querySelector('.team-1-add-1-button').disabled = true
+    document.querySelector('.team-1-subtract-1-button').disabled = true
+    document.querySelector('.team-2-add-1-button').disabled = true
+    document.querySelector('.team-2-subtract-1-button').disabled = true
+    document.querySelector('.team-1-name').textContent += ' is the winner!'
+  } else if (document.querySelector('.team-2-score').textContent === '21') {
+    document.querySelector('.update-team-1-name').disabled = true
+    document.querySelector('.update-team-2-name').disabled = true
+    document.querySelector('.team-1-add-1-button').disabled = true
+    document.querySelector('.team-1-subtract-1-button').disabled = true
+    document.querySelector('.team-2-add-1-button').disabled = true
+    document.querySelector('.team-2-subtract-1-button').disabled = true
+    document.querySelector('.team-2-name').textContent += ' is the winner!'
+  }
+}
 const addTeamOne = () => {
   addScore('.team-1-score')
 }
