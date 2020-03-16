@@ -3,51 +3,52 @@ const main = () => {
     document.querySelector('h1.hello-world').textContent = 'Hello, World!'
   }
 }
-const teamOneName = () => {
-  const nameOfTeam = document.querySelector('.team-1-input').value
-  document.querySelector('.team-1-name').textContent = nameOfTeam
+const updateTeamName = (nameInput, teamName) => {
+  const nameOfTeam = document.querySelector(nameInput).value
+  document.querySelector(teamName).textContent = nameOfTeam
 }
-const teamTwoName = () => {
-  const nameOfTeam = document.querySelector('.team-2-input').value
-  document.querySelector('.team-2-name').textContent = nameOfTeam
+const teamOne = () => {
+  updateTeamName('.team-1-input', '.team-1-name')
+}
+const teamTwo = () => {
+  updateTeamName('.team-2-input', '.team-2-name')
+}
+
+const addScore = score => {
+  if (document.querySelector(score).textContent < 21) {
+    const total = document.querySelector(score).textContent
+    console.log(total)
+    const newTotal = parseInt(total) + 1
+    document.querySelector(score).textContent = newTotal
+  }
 }
 
 const addTeamOne = () => {
-  const total = document.querySelector('.team-1-score').textContent
-  console.log(total)
-  const newTotal = parseInt(total) + 1
-  console.log(newTotal)
-  document.querySelector('.team-1-score').textContent = newTotal
+  addScore('.team-1-score')
 }
 const addTeamTwo = () => {
-  const total = document.querySelector('.team-2-score').textContent
-  console.log(total)
-  const newTotal = parseInt(total) + 1
-  console.log(newTotal)
-  document.querySelector('.team-2-score').textContent = newTotal
+  addScore('.team-2-score')
+}
+
+const subtractTeam = score => {
+  if (document.querySelector(score).textContent > 0) {
+    const total = document.querySelector(score).textContent
+    console.log(total)
+    const newTotal = parseInt(total) - 1
+    console.log(newTotal)
+    document.querySelector(score).textContent = newTotal
+  }
 }
 const subtractTeamOne = () => {
-  const total = document.querySelector('.team-1-score').textContent
-  console.log(total)
-  const newTotal = parseInt(total) - 1
-  console.log(newTotal)
-  document.querySelector('.team-1-score').textContent = newTotal
+  subtractTeam('.team-1-score')
 }
 const subtractTeamTwo = () => {
-  const total = document.querySelector('.team-2-score').textContent
-  console.log(total)
-  const newTotal = parseInt(total) - 1
-  console.log(newTotal)
-  document.querySelector('.team-2-score').textContent = newTotal
+  subtractTeam('.team-2-score')
 }
 
 document.addEventListener('DOMContentLoaded', main)
-document
-  .querySelector('.update-team-1-name')
-  .addEventListener('click', teamOneName)
-document
-  .querySelector('.update-team-2-name')
-  .addEventListener('click', teamTwoName)
+document.querySelector('.update-team-1-name').addEventListener('click', teamOne)
+document.querySelector('.update-team-2-name').addEventListener('click', teamTwo)
 document
   .querySelector('.team-1-add-1-button')
   .addEventListener('click', addTeamOne)
