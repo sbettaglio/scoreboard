@@ -12,8 +12,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: whitesmoke;
   color: rgb(14, 14, 14);
+  background-image: url(./images/camp-nou.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 body, html {
@@ -43,9 +46,21 @@ h1 {
   font-size: 2rem;
 }
 
+.one {
+  background: transparent;
+}
+
+.two {
+  background: transparent;
+}
+
 .team-1-score, .team-2-score {
   text-align: center;
   font-size: 5rem;
+}
+
+section {
+  background-color: transparent;
 }
 
 div {

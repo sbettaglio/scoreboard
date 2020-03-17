@@ -79,10 +79,12 @@ const reset = () => {
   document.querySelector('.team-2-score').textContent = '0'
   document.querySelector('.team-1-name').textContent = 'Input Name'
   document.querySelector('.team-2-name').textContent = 'Input Name'
-  document.querySelector('.two').style.background = 'whitesmoke'
-  document.querySelector('.team-2-score').style.color = 'black'
-  document.querySelector('.one').style.background = 'whitesmoke'
-  document.querySelector('.team-1-score').style.color = 'black'
+  document.querySelector('.two').style.background = 'transparent'
+  document.querySelector('.team-2-score').style.color = 'transparent'
+  document.querySelector('.one').style.background = 'transparent'
+  document.querySelector('.team-1-score').style.color = 'transparent'
+  document.querySelector('.second').style.background = 'transparent'
+  document.querySelector('.first').style.background = 'transparent'
 }
 const startGame = () => {
   document.querySelector('.first').style.background = 'green'
