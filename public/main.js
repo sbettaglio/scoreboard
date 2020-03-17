@@ -32,8 +32,8 @@ const checkForWinner = () => {
     document.querySelector('.team-2-add-1-button').disabled = true
     document.querySelector('.team-2-subtract-1-button').disabled = true
     document.querySelector('.team-1-name').textContent += ' is the winner!'
-    document.querySelector('.one').style.background = 'red'
-    document.querySelector('.team-1-score').style.color = 'blue'
+    document.querySelector('.one').style.background = 'RGB(168,19,62)'
+    document.querySelector('.team-1-score').style.color = 'RGB(0,77,152)'
   } else if (document.querySelector('.team-2-score').textContent === '21') {
     document.querySelector('.update-team-1-name').disabled = true
     document.querySelector('.update-team-2-name').disabled = true
@@ -42,8 +42,8 @@ const checkForWinner = () => {
     document.querySelector('.team-2-add-1-button').disabled = true
     document.querySelector('.team-2-subtract-1-button').disabled = true
     document.querySelector('.team-2-name').textContent += ' is the winner!'
-    document.querySelector('.two').style.background = 'red'
-    document.querySelector('.team-2-score').style.color = 'blue'
+    document.querySelector('.two').style.background = 'RGB(168,19,62)'
+    document.querySelector('.team-2-score').style.color = 'RGB(0,77,152)'
   }
 }
 const addTeamOne = () => {
