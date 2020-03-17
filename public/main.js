@@ -84,6 +84,13 @@ const reset = () => {
   document.querySelector('.one').style.background = 'whitesmoke'
   document.querySelector('.team-1-score').style.color = 'black'
 }
+const startGame = () => {
+  document.querySelector('.first').style.background = 'green'
+}
+const startSecondHalf = () => {
+  document.querySelector('.second').style.background = 'green'
+  document.querySelector('.first').style.background = 'red'
+}
 
 document.addEventListener('DOMContentLoaded', main)
 document.querySelector('.update-team-1-name').addEventListener('click', teamOne)
@@ -101,3 +108,9 @@ document
   .querySelector('.team-2-subtract-1-button')
   .addEventListener('click', subtractTeamTwo)
 document.querySelector('.reset').addEventListener('click', reset)
+
+document.querySelector('.start-first').addEventListener('click', startGame)
+
+document
+  .querySelector('.start-second')
+  .addEventListener('click', startSecondHalf)
